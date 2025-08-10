@@ -1,0 +1,78 @@
+/* Estilo do card principal, idêntico ao da lista para consistência */
+.cpf-form-card {
+    max-width: 700px; /* Um pouco mais estreito para formulários */
+    margin: 40px auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  /* Estilo do cabeçalho, idêntico ao da lista */
+  .card-header {
+    padding: 20px 25px;
+    border-bottom: 1px solid #e9ecef;
+  }
+  
+  .card-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  
+  /* Corpo do card, onde o formulário fica */
+  .card-body {
+    padding: 25px;
+  }
+  
+  /* Espaçamento entre os campos do formulário */
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  
+  /* Estilo para os inputs */
+  .form-control {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.375rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  }
+  
+  .form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  }
+  
+  /* Estilo para as mensagens de erro */
+  .error-message {
+    color: #dc3545;
+    font-size: 0.875em;
+    margin-top: 0.25rem;
+  }
+  
+  /* Alinhamento e espaçamento dos botões Salvar/Cancelar */
+  .form-actions {
+    margin-top: 2rem;
+    text-align: right;
+  }
+  
+  .form-actions .btn {
+    margin-left: 0.5rem;
+  }
