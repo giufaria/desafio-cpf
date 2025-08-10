@@ -1,0 +1,56 @@
+<div class="cpf-list-card">
+
+  <div class="card-header">
+    <h2>CPFs Cadastrados</h2>
+    <a routerLink="/novo" class="btn btn-primary">
+      <i class="fas fa-plus-circle"></i> Adicionar Novo CPF
+    </a>
+  </div>
+
+  <div class="card-body">
+    <ng-container *ngIf="cpfBlocks$ | async as blocks; else loading">
+
+      <div class="table-responsive" *ngIf="blocks.length > 0; else noData">
+        <table class="table table-hover align-middle">
+          <thead>
+            <tr>
+              <th>CPF</th>
+              <th>DESCRIÇÃO</th>
+              <th class="text-center">AÇÕES</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let block of blocks">
+              <td>{{ block.cpf }}</td>
+              <td>{{ block.description }}</td>
+              <td class="actions text-center">
+                <a [routerLink]="['/detalhe', block.id]" class="btn btn-sm btn-info" title="Detalhes">Detalhes</a>
+                <a [routerLink]="['/editar', block.id]" class="btn btn-sm btn-secondary" title="Editar">Editar</a>
+                <a [routerLink]="['/excluir', block.id]" class="btn btn-sm btn-danger" title="Excluir">Excluir</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <ng-template #noData>
+        <div class="empty-state">
+          <i class="fas fa-folder-open"></i>
+          <h3>Nenhum CPF Cadastrado</h3>
+          <p>Parece que a lista está vazia. Que tal adicionar o primeiro?</p>
+        </div>
+      </ng-template>
+
+    </ng-container>
+  </div>
+
+  <ng-template #loading>
+    <div class="loading-state">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <p class="mt-2">Carregando dados...</p>
+    </div>
+  </ng-template>
+
+</div>

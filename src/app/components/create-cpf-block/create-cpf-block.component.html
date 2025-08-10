@@ -1,0 +1,33 @@
+<div class="cpf-form-card">
+
+  <div class="card-header">
+    <h2>Criar Novo CPF Block</h2>
+  </div>
+
+  <div class="card-body">
+    <form [formGroup]="cpfForm" (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+        <label for="cpf">CPF</label>
+        <input type="text" id="cpf" class="form-control" formControlName="cpf" placeholder="000.000.000-00">
+        <div *ngIf="cpfForm.get('cpf')?.invalid && (cpfForm.get('cpf')?.dirty || cpfForm.get('cpf')?.touched)" class="error-message">
+          <small *ngIf="cpfForm.get('cpf')?.errors?.['required']">CPF é obrigatório.</small>
+          <small *ngIf="cpfForm.get('cpf')?.errors?.['pattern']">Formato do CPF inválido (use 000.000.000-00).</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="description">Descrição</label>
+        <input type="text" id="description" class="form-control" formControlName="description">
+        <div *ngIf="cpfForm.get('description')?.invalid && (cpfForm.get('description')?.dirty || cpfForm.get('description')?.touched)" class="error-message">
+          <small *ngIf="cpfForm.get('description')?.errors?.['required']">Descrição é obrigatória.</small>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" [disabled]="cpfForm.invalid" class="btn btn-primary">Salvar</button>
+        <a routerLink="/" class="btn btn-secondary">Cancelar</a>
+      </div>
+    </form>
+  </div>
+</div>

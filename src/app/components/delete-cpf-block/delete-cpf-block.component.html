@@ -1,0 +1,36 @@
+<div class="cpf-delete-card">
+  <ng-container *ngIf="cpfBlock$ | async as block; else loading">
+
+    <div class="card-header">
+      <h2>Confirmar Exclusão</h2>
+    </div>
+
+    <div class="card-body">
+      <p>Você tem certeza que deseja excluir permanentemente o seguinte CPF Block?</p>
+      
+      <div class="details-group">
+        <strong>CPF:</strong>
+        <p>{{ block.cpf }}</p>
+      </div>
+      <div class="details-group">
+        <strong>Descrição:</strong>
+        <p>{{ block.description }}</p>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <button (click)="confirmDelete()" class="btn btn-danger">Sim, excluir!</button>
+      <button (click)="cancel()" class="btn btn-secondary">Cancelar</button>
+    </div>
+
+  </ng-container>
+
+  <ng-template #loading>
+    <div class="loading-state">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <p class="mt-2">Carregando...</p>
+    </div>
+  </ng-template>
+</div>

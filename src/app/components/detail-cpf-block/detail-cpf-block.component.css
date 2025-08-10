@@ -1,0 +1,61 @@
+/* Estilo do card principal, consistente com as outras telas */
+.cpf-detail-card {
+  max-width: 700px;
+  margin: 40px auto;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Estilo do cabeçalho */
+.card-header {
+  padding: 20px 25px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.card-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Corpo do card com os detalhes */
+.card-body {
+  padding: 25px;
+}
+
+/* Grupo de detalhes (label + valor) */
+.details-group {
+  margin-bottom: 1.5rem;
+}
+
+.details-group strong {
+  font-weight: 500;
+  color: #6c757d; /* Cinza para o label */
+}
+
+.details-group p {
+  font-size: 1.1rem;
+  color: #212529; /* Preto para o valor */
+  margin-top: 0.25rem;
+  word-wrap: break-word; /* Garante que textos longos quebrem a linha */
+}
+
+/* Rodapé do card */
+.card-footer {
+  padding: 15px 25px;
+  background-color: #f8f9fa; /* Fundo levemente cinza */
+  text-align: right;
+  border-top: 1px solid #e9ecef;
+}
+
+/* Estilo para a tela de "carregando" */
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  color: #6c757d;
+}

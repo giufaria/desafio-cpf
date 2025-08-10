@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="table-responsive-container-fluid">
+    <h1 style="text-align: center; font-size: 24px; margin-top: 5%;">CPFs Cadastrados</h1>
+
+    <div class="header" style="margin-bottom: 20px; text-align: right;">
+        <a routerLink="/novo" class="btn btn-primary" style="background-color: #ffc107; border-color: #ffc107; color: black;">Adicionar Novo CPF</a>
+    </div>
+
+    <ng-container *ngIf="cpfBlocks$ | async as blocks; else loading">
+      <div class="table-responsive" *ngIf="blocks.length > 0; else noData">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>CPF</th>
+              <th>DESCRIÇÃO</th>
+              <th style="text-align: center;">AÇÕES</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let block of blocks">
+              <td>{{ block.cpf }}</td>
+              <td>{{ block.description }}</td>
+              <td class="actions" style="text-align: center;">
+                <a [routerLink]="['/detalhe', block.id]" class="btn btn-info" style="margin-right: 5px;">Detalhes</a>
+                <a [routerLink]="['/editar', block.id]" class="btn btn-secondary" style="margin-right: 5px;">Editar</a>
+                <a [routerLink]="['/excluir', block.id]" class="btn btn-danger">Excluir</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <ng-template #noData>
+        <p style="text-align: center; margin-top: 20px;">Nenhum CPF Block cadastrado ainda. <a routerLink="/novo">Crie o primeiro!</a></p>
+      </ng-template>
+    </ng-container>
+
+    <ng-template #loading>
+        <div class="text-center" style="margin-top: 50px;">
+            <div class="spinner-border" role="status">
+                <span class="sr-only"></span>
+            </div>
+            <p>Carregando dados...</p>
+        </div>
+    </ng-template>
+
+  </div>
+</div>

@@ -1,0 +1,82 @@
+/* Estilo do card principal, que centraliza tudo */
+.cpf-list-card {
+  max-width: 900px; /* Largura máxima do conteúdo */
+  margin: 40px auto; /* Centraliza o card na página */
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Garante que o conteúdo respeite as bordas arredondadas */
+}
+
+/* Alinha o título e o botão no cabeçalho */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.card-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.card-body {
+  padding: 25px;
+}
+
+/* Deixa a tabela com um visual mais limpo */
+.table {
+  margin-bottom: 0;
+}
+
+.table th {
+  font-weight: 600;
+  color: #495057;
+  border-top: none;
+}
+
+/* Espaçamento entre os botões de ação */
+.actions a, .actions button {
+  margin: 0 4px;
+}
+
+/* Estilo para a tela de "lista vazia" */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  text-align: center;
+  color: #6c757d;
+}
+
+.empty-state .fa-folder-open {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  color: #ced4da;
+}
+
+.empty-state h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* Estilo para a tela de "carregando" */
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  color: #6c757d;
+}
+
+/* (Opcional) Adiciona ícones aos botões - Requer Font Awesome */
+.btn i {
+  margin-right: 6px;
+}
